@@ -13,7 +13,7 @@ public class MyMessageListener : MonoBehaviour {
     void Update () {
         if (Input.GetAxis("Vertical") > 0.0F) {
             Debug.Log("Sending zaaap");
-            serialController.SendSerialMessage("zaaap");
+            serialController.SendSerialMessage("zaaap\r");
         }
     }
     // Invoked when a line of data is received from the serial device.
