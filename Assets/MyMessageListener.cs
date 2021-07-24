@@ -33,6 +33,23 @@ public class MyMessageListener : MonoBehaviour {
     void Start () {
             serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
             globalState = FindObjectOfType<GlobalState>();
+
+        EventManager.Subscribe(GameEvent.TopLeftDeath, _ => 
+        {
+            Zap();
+        });
+        EventManager.Subscribe(GameEvent.TopRightDeath, _ => 
+        {
+            Zap();
+        });
+        EventManager.Subscribe(GameEvent.BottomLeftDeath, _ => 
+        {
+            Zap();
+        });
+        EventManager.Subscribe(GameEvent.BottomRightDeath, _ => 
+        {
+            Zap();
+        });
     }
     // Update is called once per frame
     void Update () {
@@ -109,5 +126,15 @@ public class MyMessageListener : MonoBehaviour {
     void OnConnectionEvent(bool success)
     {
         Debug.Log(success ? "Device connected" : "Device disconnected");
+    }
+
+    void Zap() {
+        serialController.SendSerialMessage("zap\r");
+    }
+    void Zaap() {
+        serialController.SendSerialMessage("zaap\r");
+    }
+    void Zaaap() {
+        serialController.SendSerialMessage("zaaap\r");
     }
 }
