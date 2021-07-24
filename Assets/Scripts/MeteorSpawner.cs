@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeteorSpawner : MonoBehaviour
 {
     [SerializeField] float SpawnDelay = 3f;
+    [SerializeField] float RandomPos = 5f;
     [SerializeField] GameObject Meteor;
 
     private ScreenGameplaySettings _screenGameplayMod;
@@ -27,8 +28,8 @@ public class MeteorSpawner : MonoBehaviour
         {
             var nextSpawnTime = delay - Mathf.Min(delay - 0.1f, _screenGameplayMod.CurrentSpeed);
             yield return new WaitForSeconds(nextSpawnTime);
-            var horizontalSpawnDistance = Random.Range(-5, 5);
-            Instantiate(Meteor, new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
+            var verticalSpawnDistance = Random.Range(-RandomPos, RandomPos);
+            Instantiate(Meteor, new Vector3(transform.position.x , transform.position.y + verticalSpawnDistance), Quaternion.identity);
         }
     }
 }
