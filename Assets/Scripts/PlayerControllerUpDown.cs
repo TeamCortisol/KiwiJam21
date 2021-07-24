@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControllerUpDown : MonoBehaviour
 {
     private Vector2 targetPos;
-    public float yStep = 50f;
+    public float yStep = 5f;
     public float speed = 50f;
     // Start is called before the first frame update
     void Start()

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yStep: 5
-  speed: 5
+  speed: 50
 --- !u!50 &2494911342961913508
 Rigidbody2D:
   serializedVersion: 4
