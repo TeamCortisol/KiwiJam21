@@ -52,10 +52,11 @@ public class MyMessageListener : MonoBehaviour {
             int voltage = Int32.Parse(msg);
             txt.text = BPM + " BPM";
             // Target Heart Rate (HR) Zone (60-85%): 117 – 166
-            float diff = ((float) voltage - 117.0F) / (166.0F - 117.0F);
+            float diff = ((float) BPM - 80.0F) / (166.0F - 117.0F);
             float diffClamped = Mathf.Clamp(diff, 0.0F, 1.0F);
-            // TODO: set difficulty based on diff
-            // globalState.Difficulty = diffClamped;
+            if (globalState) {
+                globalState.Difficulty = diffClamped;
+            }
 
             buffer.Add(voltage);
             if (buffer.Count > 66) {
