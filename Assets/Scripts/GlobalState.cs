@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GlobalState : MonoBehaviour
 {
-    [SerializeField] public float GlobalSpeed = 0f;
+    [Range(0, 1)]
+    [SerializeField] public float Difficulty = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,14 +16,13 @@ public class GlobalState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GlobalSpeed += 0.02f * Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Difficulty < 1f)
         {
-            GlobalSpeed += 0.1f;
+            Difficulty += 0.1f;
         } 
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && GlobalSpeed > 0.01f)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && Difficulty > 0.01f)
         {
-            GlobalSpeed -= 0.1f;
+            Difficulty -= 0.1f;
         }
     }
 }

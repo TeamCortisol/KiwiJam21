@@ -13,7 +13,7 @@ public class MeteorSpawner : MonoBehaviour
     void Start()
     {
         _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
-        StartCoroutine(SpawnMeteor(SpawnDelay * _screenGameplayMod.InitialSpeed));
+        StartCoroutine(SpawnMeteor(SpawnDelay));
     }
 
     // Update is called once per frame

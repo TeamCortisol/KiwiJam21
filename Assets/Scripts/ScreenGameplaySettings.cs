@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScreenGameplaySettings : MonoBehaviour
 {
-    [SerializeField] public float InitialSpeed = 1f;
+    [Range(0, 1)]
     [SerializeField] public KeyCode ActionKey = KeyCode.Q;
     [SerializeField] public Color PlayerColor;
 
@@ -21,6 +21,6 @@ public class ScreenGameplaySettings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CurrentSpeed *= _globalState.GlobalSpeed;  
+        CurrentSpeed = _globalState.Difficulty * 10;
     }
 }
