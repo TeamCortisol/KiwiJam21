@@ -24,8 +24,9 @@ public class MyMessageListener : MonoBehaviour {
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {
-        Debug.Log("Arrived: " + msg);
-        txt.text = msg;
+        // Debug.Log("Arrived: " + msg);
+        // Debug.Log("Arrived: " + "asd");
+        txt.text = Int32.Parse(msg) + " BPM";
         globalState.Difficulty = Int32.Parse(msg) / 100.0F;
     }
 
