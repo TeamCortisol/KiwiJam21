@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    [SerializeField] float SpawnDelay = 3f;
+    [SerializeField] float SpawnDelay = 10f;
+    [SerializeField] float MinimumSpawnDelay = 0.1f;
     [SerializeField] GameObject Meteor;
 
-    private ScreenGameplaySettings _screenGameplayMod;
+    private Screen _screenGameplayMod;
 
     // Start is called before the first frame update
     void Start()
     {
-        _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
+        _screenGameplayMod = GetComponentInParent<Screen>();
         StartCoroutine(SpawnMeteor(SpawnDelay));
     }
 
@@ -25,7 +26,7 @@ public class MeteorSpawner : MonoBehaviour
     {
         while (true)
         {
-            var nextSpawnTime = delay - Mathf.Min(delay - 0.1f, _screenGameplayMod.CurrentSpeed);
+            var nextSpawnTime = Mathf.Max(MinimumSpawnDelay, delay * (1 - _screenGameplayMod.CurrentDifficulty));
             yield return new WaitForSeconds(nextSpawnTime);
             var horizontalSpawnDistance = Random.Range(-5, 5);
             Instantiate(Meteor, new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);

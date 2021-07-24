@@ -305,7 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dd4908440d85145973cef02f49ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnDelay: 10
+  SpawnDelay: 5
+  MinimumSpawnDelay: 0.4
   Meteor: {fileID: 7119047300135339055, guid: 18fb5852925d653468cb73088cae9d27, type: 3}
 --- !u!1 &4360205163825752022
 GameObject:
@@ -426,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpForce: 4
+  OnDeathEvent: 0
 --- !u!61 &4360205163825752017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -439,7 +441,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0019993186, y: 0.0039988756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -450,7 +452,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9720098, y: 0.95201755}
   m_EdgeRadius: 0
 --- !u!1 &4360205164657594039
 GameObject:
@@ -461,8 +463,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4360205164657594038}
+  - component: {fileID: 1566066128500400142}
   m_Layer: 0
-  m_Name: GameScreen
+  m_Name: HoverGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,3 +489,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566066128500400142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360205164657594039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018a8bac1cded5f40ad2a48496f54826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
