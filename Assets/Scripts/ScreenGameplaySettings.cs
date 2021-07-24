@@ -6,6 +6,8 @@ public class ScreenGameplaySettings : MonoBehaviour
 {
     [SerializeField] public float InitialSpeed = 1f;
     [SerializeField] public KeyCode ActionKey = KeyCode.Q;
+    [SerializeField] public Color PlayerColor;
+
     public float CurrentSpeed { get; private set; }
 
     private GlobalState _globalState;

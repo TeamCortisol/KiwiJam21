@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     {
         _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = _screenGameplayMod.PlayerColor;
     }
 
     void Update()
