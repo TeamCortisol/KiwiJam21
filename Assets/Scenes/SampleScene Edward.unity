@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionKey: 108
   PlayerColor: {r: 1, g: 0, b: 0, a: 1}
+  PlayerDeathEvent: 0
 --- !u!1001 &348581764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionKey: 113
   PlayerColor: {r: 1, g: 0, b: 0, a: 1}
+  PlayerDeathEvent: 0
 --- !u!1 &1950990970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionKey: 112
   PlayerColor: {r: 0.61960787, g: 0, b: 0.3647059, a: 1}
+  PlayerDeathEvent: 0
 --- !u!1 &2048262607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionKey: 97
   PlayerColor: {r: 1, g: 1, b: 1, a: 1}
+  PlayerDeathEvent: 0
 --- !u!1 &2132838474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,4 +1475,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2134944575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2134944577}
+  - component: {fileID: 2134944576}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2134944576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134944575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da8b7ca5bf6f9f48b3d0aa9248c4ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2134944577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134944575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.75, y: 5, z: 2.9042783}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
