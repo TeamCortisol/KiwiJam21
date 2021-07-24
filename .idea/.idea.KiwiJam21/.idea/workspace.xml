@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c18a42a9-a102-4ff3-a70d-0ae888811524" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c18a42a9-a102-4ff3-a70d-0ae888811524" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +87,7 @@
       <workItem from="1627112461863" duration="40000" />
       <workItem from="1627113334965" duration="9281000" />
       <workItem from="1627163317395" duration="1955000" />
+      <workItem from="1627165725711" duration="295000" />
     </task>
     <servers />
   </component>
