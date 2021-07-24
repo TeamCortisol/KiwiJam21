@@ -217,6 +217,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3.03
       objectReference: {fileID: 0}
+    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
+      propertyPath: Meteors.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
+      propertyPath: Meteors.Array.data[0]
+      value: 
+      objectReference: {fileID: 7119047300135339055, guid: e13d3c94261bf5f4bbe3e03a3171f210, type: 3}
+    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
+      propertyPath: Meteors.Array.data[1]
+      value: 
+      objectReference: {fileID: 7119047300135339055, guid: 4f5927cfe3c27cf43b9730a4e9e218ac, type: 3}
+    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
+      propertyPath: Meteors.Array.data[2]
+      value: 
+      objectReference: {fileID: 7119047300135339055, guid: 9f541c7fd7d439e4eba2e9a44848fec0, type: 3}
+    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
+      propertyPath: Meteors.Array.data[3]
+      value: 
+      objectReference: {fileID: 7119047300135339055, guid: d9e3ec52d0536d944a1fc445ba7166ac, type: 3}
     - target: {fileID: 4360205164657594038, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
       propertyPath: m_RootOrder
       value: 0
