@@ -13,33 +13,19 @@ public class Tile : MonoBehaviour
     {
         isWhite = true;
     }
-
-    private void SwitchColour()
-    {
-        if (isWhite)
-        {
-            myMaterial.color = Color.black;
-            isWhite = false;
-        }
-        else
-        {
-            myMaterial.color = Color.white;
-            isWhite = true;
-        }
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.left * (moveSpeed * Time.deltaTime));
-        if (Input.GetKeyUp(KeyCode.L))
+        if (Input.GetKeyUp(KeyCode.L) && playerTouchedTile)
         {
             SwitchColour();
             Debug.Log("colour switch");
         }
         else
         {
-            Debug.Log("died");
+            // Debug.Log("died");
         }
     }
     
@@ -63,4 +49,19 @@ public class Tile : MonoBehaviour
             playerTouchedTile = false;
         }
     }
+    
+    private void SwitchColour()
+    {
+        if (isWhite)
+        {
+            myMaterial.color = Color.black;
+            isWhite = false;
+        }
+        else
+        {
+            myMaterial.color = Color.white;
+            isWhite = true;
+        }
+    }
+
 }

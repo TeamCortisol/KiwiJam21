@@ -69,6 +69,8 @@
           <e p="ScreenManager.cs" t="Include" />
           <e p="SubGame.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
+          <e p="TileInstruction.cs" t="Include" />
+          <e p="TileScreenScript.cs" t="Include" />
           <e p="TileSpawner.cs" t="Include" />
           <e p="Window_Graph.cs" t="Include" />
         </e>

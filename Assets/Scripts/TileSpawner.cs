@@ -11,10 +11,13 @@ public class TileSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (Time.time > spawnTime)
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            SpawnTile();
-            spawnTime = Time.time + timeBetweenSpawn;
+            if (Time.time > spawnTime)
+            {
+                SpawnTile();
+                spawnTime = Time.time + timeBetweenSpawn;
+            }
         }
     }
 

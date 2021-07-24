@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c18a42a9-a102-4ff3-a70d-0ae888811524" name="Default Changelist" comment="" />
+    <list default="true" id="c18a42a9-a102-4ff3-a70d-0ae888811524" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TileInstruction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TileScreenScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/BlackTile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BlackTile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +20,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/82/f0495b15/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerGrowController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TileScreenScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TileInstruction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -26,9 +46,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PatsScripts/OtherGame.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerTileInvertScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TileMove.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TileScreenScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TileInstruction.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vjq4fBHVEcBKAagHqTqz1mensW" />
@@ -87,7 +109,7 @@
       <workItem from="1627112461863" duration="40000" />
       <workItem from="1627113334965" duration="9281000" />
       <workItem from="1627163317395" duration="1955000" />
-      <workItem from="1627165725711" duration="295000" />
+      <workItem from="1627165725711" duration="3005000" />
     </task>
     <servers />
   </component>
