@@ -11,7 +11,7 @@ public class PlayerGrowController : MonoBehaviour
 
     private Vector3 originalScale;
     private int _numberOfTimesGotHit = 0;
-    private Screen _screenGameplayMod;
+    private Screen _screen;
     public float scaleMultiplier = 0.3f;
     
     private void Start()
@@ -20,9 +20,9 @@ public class PlayerGrowController : MonoBehaviour
 
         originalScale = transform.localScale;
 
-        _screenGameplayMod = GetComponentInParent<Screen>();
+        _screen = GetComponentInParent<Screen>();
         var spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = _screenGameplayMod.PlayerColor;
+        spriteRenderer.color = _screen.PlayerColor;
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class PlayerGrowController : MonoBehaviour
         }
 
         // handle input
-        if (Input.GetKeyDown(_screenGameplayMod.ActionKey))
+        if (Input.GetKeyDown(_screen.ActionKey))
         {
             Debug.Log("currentScale " + currentScale);
             if (NumberSpawner.Instance.CurrentNumber == currentScale)
@@ -56,7 +56,7 @@ public class PlayerGrowController : MonoBehaviour
             }
             else { 
                 // TODO: handle wrong press
-                
+                EventManager.Emit(_screen.PlayerDeathEvent);
             }
         }
     }
@@ -74,6 +74,4 @@ public class PlayerGrowController : MonoBehaviour
         _numberOfTimesGotHit++;
         Debug.Log($"You got hit {_numberOfTimesGotHit} times");
     }
-
-
 }
