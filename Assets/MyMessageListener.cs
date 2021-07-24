@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 public class MyMessageListener : MonoBehaviour {
     public SerialController serialController;
+    public TextMeshProUGUI txt;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +23,7 @@ public class MyMessageListener : MonoBehaviour {
     void OnMessageArrived(string msg)
     {
         Debug.Log("Arrived: " + msg);
+        txt.text = msg;
     }
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
     // will be 'true' upon connection, and 'false' upon disconnection or
