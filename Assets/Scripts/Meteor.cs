@@ -15,10 +15,16 @@ public class Meteor : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         var randomSpeedMod = Random.Range(0.5f, 1.5f);
         _rigidbody.velocity = new Vector2(randomSpeedMod * -LeftForce, randomSpeedMod * -DownForce);
+
+        Destroy(gameObject, 20f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
