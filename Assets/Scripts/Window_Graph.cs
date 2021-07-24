@@ -13,11 +13,6 @@ public class Window_Graph : MonoBehaviour {
     private void Awake() {
         graphContianer = transform.Find("graphContianer").GetComponent<RectTransform>();
 
-        // CreateCircle(new Vector2(1, 1));
-        // CreateCircle(new Vector2(10, 10));
-        // CreateCircle(new Vector2(100, 100));
-        // CreateCircle(new Vector2(1000, 1000));
-
         List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
         List<GameObject> circles = ShowGraph(valueList);
         for (int i = 0; i < circles.Count; i++) {
