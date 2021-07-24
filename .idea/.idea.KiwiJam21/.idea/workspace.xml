@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c18a42a9-a102-4ff3-a70d-0ae888811524" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WhiteTile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/WhiteTile.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +14,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/82/f0495b15/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerGrowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -93,7 +88,7 @@
       <workItem from="1627085675854" duration="8878000" />
       <workItem from="1627112461863" duration="40000" />
       <workItem from="1627113334965" duration="9281000" />
-      <workItem from="1627163317395" duration="1597000" />
+      <workItem from="1627163317395" duration="1955000" />
     </task>
     <servers />
   </component>
