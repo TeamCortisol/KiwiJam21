@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    [SerializeField] float SpawnDelay = 10f;
     [SerializeField] float MinimumSpawnDelay = 0.1f;
+    [SerializeField] float SpawnDelay = 3f;
+    [SerializeField] float RandomPos = 5f;
     [SerializeField] GameObject Meteor;
 
     private Screen _screenGameplayMod;
@@ -28,8 +29,8 @@ public class MeteorSpawner : MonoBehaviour
         {
             var nextSpawnTime = Mathf.Max(MinimumSpawnDelay, delay * (1 - _screenGameplayMod.CurrentDifficulty));
             yield return new WaitForSeconds(nextSpawnTime);
-            var horizontalSpawnDistance = Random.Range(-5, 5);
-            Instantiate(Meteor, new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
+            var verticalSpawnDistance = Random.Range(-RandomPos, RandomPos);
+            Instantiate(Meteor, new Vector3(transform.position.x , transform.position.y + verticalSpawnDistance), Quaternion.identity);
         }
     }
 }
