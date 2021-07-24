@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ScreenManager : MonoBehaviour
 {
-    [SerializeField] List<GameObject> GameScreenPrefabs;
-    
+    [SerializeField] List<SubGame> GameScreenPrefabs;
     [SerializeField] Screen TopLeft;
     [SerializeField] Screen TopRight;
     [SerializeField] Screen BottomLeft;
@@ -15,10 +14,10 @@ public class ScreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateNewScreen(TopLeft.transform);
-        CreateNewScreen(TopRight.transform);
-        CreateNewScreen(BottomLeft.transform);
-        CreateNewScreen(BottomRight.transform);
+        TopLeft.CreateGame(GetRandomGame());
+        TopRight.CreateGame(GetRandomGame());
+        BottomLeft.CreateGame(GetRandomGame());
+        BottomRight.CreateGame(GetRandomGame());
 
         EventManager.Subscribe(GameEvent.TopLeftDeath, _ => 
         {
@@ -42,18 +41,12 @@ public class ScreenManager : MonoBehaviour
         });
     }
 
-    private IEnumerator DestroyAndRecreate(Screen destroyScreen)
+    private IEnumerator DestroyAndRecreate(Screen screen)
     {
-        destroyScreen.DestroyGame();
+        screen.DestroyGame();
         yield return new WaitForSeconds(ScreenRespawnTime);
-        CreateNewScreen(destroyScreen.transform);
+        screen.CreateGame(GetRandomGame());
     }
 
-    private void CreateNewScreen(Transform parentTransform)
-    {
-        var randomGame = GameScreenPrefabs[Random.Range(0, GameScreenPrefabs.Count)];
-        var newScreen = Instantiate(randomGame);
-        newScreen.transform.parent = parentTransform;
-        newScreen.transform.localPosition = Vector3.zero;
-    }
+    private SubGame GetRandomGame() => GameScreenPrefabs[Random.Range(0, GameScreenPrefabs.Count)];
 }

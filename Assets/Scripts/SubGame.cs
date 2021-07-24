@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SubGame : MonoBehaviour
 {
+    // for display in debugger
+    [SerializeField] float SurvivedTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class SubGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SurvivedTime += Time.deltaTime;
     }
 }

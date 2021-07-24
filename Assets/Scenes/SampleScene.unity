@@ -153,8 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameScreenPrefabs:
-  - {fileID: 4360205164657594039, guid: 538ecb676ca25174aab66d462b1f04d3, type: 3}
-  - {fileID: 4360205164657594039, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
+  - {fileID: 1387887463820598217, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
+  - {fileID: 7375370611028880382, guid: 538ecb676ca25174aab66d462b1f04d3, type: 3}
+  - {fileID: 6325241839089345853, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
   TopLeft: {fileID: 1946457218}
   TopRight: {fileID: 1950990972}
   BottomLeft: {fileID: 2048262609}
@@ -304,6 +305,7 @@ MonoBehaviour:
   ActionKey: 108
   PlayerColor: {r: 1, g: 0, b: 0, a: 1}
   PlayerDeathEvent: 3
+  CurrentDifficulty: 0
 --- !u!1 &436893048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1049,7 @@ MonoBehaviour:
   ActionKey: 113
   PlayerColor: {r: 1, g: 0, b: 0, a: 1}
   PlayerDeathEvent: 0
+  CurrentDifficulty: 0
 --- !u!1 &1950990970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1097,7 @@ MonoBehaviour:
   ActionKey: 112
   PlayerColor: {r: 0.61960787, g: 0, b: 0.3647059, a: 1}
   PlayerDeathEvent: 1
+  CurrentDifficulty: 0
 --- !u!1 &2048262607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1145,7 @@ MonoBehaviour:
   ActionKey: 97
   PlayerColor: {r: 0.61960787, g: 0, b: 0.3647059, a: 1}
   PlayerDeathEvent: 2
+  CurrentDifficulty: 0
 --- !u!1 &2132838474
 GameObject:
   m_ObjectHideFlags: 0
