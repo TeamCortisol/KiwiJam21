@@ -529,22 +529,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1950990971}
     m_Modifications:
-    - target: {fileID: 936944555, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 936944555, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 936944555, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 537035846402067930, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
-      propertyPath: growSpeed
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4360205164657594038, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -591,7 +575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360205164657594039, guid: c67eb3a403135984f8627d5093c08d17, type: 3}
       propertyPath: m_Name
-      value: GameScreenCircle
+      value: CircleGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67eb3a403135984f8627d5093c08d17, type: 3}

@@ -13,6 +13,8 @@ public class PlayerGrowController : MonoBehaviour
     private int _numberOfTimesGotHit = 0;
     private Screen _screen;
     public float scaleMultiplier = 0.3f;
+
+    private bool isGrowing = true;
     
     private void Start()
     {
@@ -28,7 +30,10 @@ public class PlayerGrowController : MonoBehaviour
     void Update()
     {
         // grow
-        transform.localScale *= 1 + growSpeed * Time.deltaTime;
+        if (isGrowing)
+            transform.localScale *= 1 + growSpeed * Time.deltaTime;
+        else
+            transform.localScale *= 1 - growSpeed * Time.deltaTime;
 
         // update number
         var currentScale = Mathf.RoundToInt(transform.localScale.x / scaleMultiplier);
@@ -36,7 +41,18 @@ public class PlayerGrowController : MonoBehaviour
 
         if (currentScale > maxGrowScale)
         {
-            transform.localScale = originalScale;
+            //shrink
+            isGrowing = false;
+            
+        }
+        else if (currentScale == 0)
+        {
+            if (!isGrowing)
+            {
+                // reset
+                isGrowing = true;
+                // TODO: destroy screen ?
+            }
         }
 
         // handle input
