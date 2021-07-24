@@ -7,19 +7,21 @@ public class Player : MonoBehaviour
     [SerializeField] float JumpForce = 100f;
 
     private Rigidbody2D _rigidbody;
-    private int _numberOfTimesGotHit = 0;
+    private int _numberOfTimesGotHit = 0;    
+    private ScreenGameplaySettings _screenGameplayMod;
 
     // Start is called before the first frame update
     void Start()
     {
+        _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetAxis("Jump") > 0)
+        if (Input.GetKeyDown(_screenGameplayMod.ActionKey))
         {
-            _rigidbody.AddForce(JumpForce * Vector2.up);
+            _rigidbody.AddForce(JumpForce * Vector2.up, ForceMode2D.Impulse);
         }
     }
 

@@ -7,13 +7,13 @@ public class MeteorSpawner : MonoBehaviour
     [SerializeField] float SpawnDelay = 3f;
     [SerializeField] GameObject Meteor;
 
-    private GlobalState _globalState;
+    private ScreenGameplaySettings _screenGameplayMod;
 
     // Start is called before the first frame update
     void Start()
     {
-        _globalState = FindObjectOfType<GlobalState>();
-        StartCoroutine(SpawnMeteor(SpawnDelay));
+        _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
+        StartCoroutine(SpawnMeteor(SpawnDelay * _screenGameplayMod.InitialSpeed));
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class MeteorSpawner : MonoBehaviour
     {
         while (true)
         {
-            var nextSpawnTime = delay - Mathf.Min(delay - 0.1f, _globalState.GlobalSpeed);
+            var nextSpawnTime = delay - Mathf.Min(delay - 0.1f, _screenGameplayMod.CurrentSpeed);
             yield return new WaitForSeconds(nextSpawnTime);
             var horizontalSpawnDistance = Random.Range(-5, 5);
             Instantiate(Meteor, new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
