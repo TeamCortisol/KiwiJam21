@@ -29,10 +29,10 @@ public class MeteorSpawner : MonoBehaviour
         {
             var nextSpawnTime = Mathf.Max(MinimumSpawnDelay, delay * (1 - _screenGameplayMod.CurrentDifficulty));
             yield return new WaitForSeconds(nextSpawnTime);
-            var verticalSpawnDistance = Random.Range(-RandomPos, RandomPos);
+            var horizontalSpawnDistance = Random.Range(-RandomPos, RandomPos);
             
             var prefabIdx = Random.Range(0, Meteors.Length);
-            Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x , transform.position.y + verticalSpawnDistance), Quaternion.identity);
+            Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
         }
     }
 }

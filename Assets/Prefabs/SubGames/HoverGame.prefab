@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4360205162827302482}
   - component: {fileID: 4360205162827302483}
   - component: {fileID: 4360205162827302484}
+  - component: {fileID: 1744319417112779071}
   m_Layer: 0
   m_Name: Ceiling
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360205162827302485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.5, z: 0}
-  m_LocalScale: {x: 18, y: 1, z: 1}
+  m_LocalPosition: {x: -0.05, y: 4.25, z: 0}
+  m_LocalScale: {x: 17.8, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}
   m_RootOrder: 1
@@ -131,6 +132,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1744319417112779071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360205162827302485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627c40e2d3c82804b9b2efdf421f4514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4360205163136561161
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +156,8 @@ GameObject:
   - component: {fileID: 4360205163136561160}
   - component: {fileID: 4360205163136561158}
   - component: {fileID: 4360205163136561157}
-  m_Layer: 0
+  - component: {fileID: 7397881523291090763}
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -158,8 +172,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360205163136561161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.5, z: 0}
-  m_LocalScale: {x: 18, y: 1, z: 1}
+  m_LocalPosition: {x: -0.05, y: -5.25, z: 0}
+  m_LocalScale: {x: 17.8, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}
   m_RootOrder: 2
@@ -262,6 +276,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7397881523291090763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360205163136561161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627c40e2d3c82804b9b2efdf421f4514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4360205163821334359
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360205163821334359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.47, y: 3.6, z: 1.0049314}
+  m_LocalPosition: {x: 8.43, y: 2.98, z: 1.0049314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}
@@ -325,7 +351,7 @@ GameObject:
   - component: {fileID: 4360205163825752017}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360205163825752022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.67, y: 2.19, z: 5.8085566}
+  m_LocalPosition: {x: -2.6, y: 2.19, z: 5.8085566}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}
@@ -429,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpForce: 4
+  CanJumpInAir: 1
 --- !u!61 &4360205163825752017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -621,7 +648,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05416146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -632,5 +659,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1}
+  m_Size: {x: 0.1, y: 0.78998643}
   m_EdgeRadius: 0

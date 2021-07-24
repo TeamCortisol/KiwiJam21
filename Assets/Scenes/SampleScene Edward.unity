@@ -213,30 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2048262608}
     m_Modifications:
-    - target: {fileID: 3153694195096090551, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
-      propertyPath: Meteors.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
-      propertyPath: Meteors.Array.data[0]
-      value: 
-      objectReference: {fileID: 7119047300135339055, guid: e13d3c94261bf5f4bbe3e03a3171f210, type: 3}
-    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
-      propertyPath: Meteors.Array.data[1]
-      value: 
-      objectReference: {fileID: 7119047300135339055, guid: 4f5927cfe3c27cf43b9730a4e9e218ac, type: 3}
-    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
-      propertyPath: Meteors.Array.data[2]
-      value: 
-      objectReference: {fileID: 7119047300135339055, guid: 9f541c7fd7d439e4eba2e9a44848fec0, type: 3}
-    - target: {fileID: 4360205163821334358, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
-      propertyPath: Meteors.Array.data[3]
-      value: 
-      objectReference: {fileID: 7119047300135339055, guid: d9e3ec52d0536d944a1fc445ba7166ac, type: 3}
     - target: {fileID: 4360205164657594038, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -283,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360205164657594039, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
       propertyPath: m_Name
-      value: GameScreenRunner
+      value: RunnerGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce96087eb4247634eb07dea5d43f744e, type: 3}
@@ -318,7 +294,7 @@ Transform:
   - {fileID: 348581765}
   - {fileID: 1282423464}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &315579601
 MonoBehaviour:
@@ -452,8 +428,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScreen
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4360205164657594037, guid: 538ecb676ca25174aab66d462b1f04d3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538ecb676ca25174aab66d462b1f04d3, type: 3}
 --- !u!4 &420160147 stripped
 Transform:
@@ -973,7 +948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1581556106
 PrefabInstance:
@@ -988,7 +963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972941219597055942, guid: 7bb918f5b53153745bd0b36585f83f91, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5972941219597055942, guid: 7bb918f5b53153745bd0b36585f83f91, type: 3}
       propertyPath: m_LocalScale.x
@@ -1319,7 +1294,7 @@ Transform:
   - {fileID: 420160147}
   - {fileID: 1767709786}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1946457218
 MonoBehaviour:
@@ -1367,7 +1342,7 @@ Transform:
   - {fileID: 566809230}
   - {fileID: 1635279113}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1950990972
 MonoBehaviour:
@@ -1415,7 +1390,7 @@ Transform:
   - {fileID: 814718227}
   - {fileID: 119892744}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2048262609
 MonoBehaviour:
@@ -1430,7 +1405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionKey: 97
-  PlayerColor: {r: 1, g: 1, b: 1, a: 1}
+  PlayerColor: {r: 1, g: 0, b: 0, a: 1}
   PlayerDeathEvent: 0
 --- !u!1 &2132838474
 GameObject:
@@ -1487,7 +1462,7 @@ GameObject:
   - component: {fileID: 2134944577}
   - component: {fileID: 2134944576}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EventManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1517,5 +1492,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

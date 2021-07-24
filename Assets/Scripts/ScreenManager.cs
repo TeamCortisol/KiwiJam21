@@ -15,34 +15,45 @@ public class ScreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CreateNewScreen(TopLeft.transform);
+        CreateNewScreen(TopRight.transform);
+        CreateNewScreen(BottomLeft.transform);
+        CreateNewScreen(BottomRight.transform);
+
         EventManager.Subscribe(GameEvent.TopLeftDeath, _ => 
         {
             Debug.Log("Top Left Died");
-            StartCoroutine(DestroyAndRecreate(TopLeft, GameEvent.TopLeftDeath));
+            StartCoroutine(DestroyAndRecreate(TopLeft));
         });
         EventManager.Subscribe(GameEvent.TopRightDeath, _ => 
         {
             Debug.Log("Top Right Died");
-            StartCoroutine(DestroyAndRecreate(TopRight, GameEvent.TopRightDeath));
+            StartCoroutine(DestroyAndRecreate(TopRight));
         });
         EventManager.Subscribe(GameEvent.BottomLeftDeath, _ => 
         {
             Debug.Log("Bottom Left Died");
-            StartCoroutine(DestroyAndRecreate(BottomLeft, GameEvent.BottomLeftDeath));
+            StartCoroutine(DestroyAndRecreate(BottomLeft));
         });
         EventManager.Subscribe(GameEvent.BottomRightDeath, _ => 
         {
             Debug.Log("Bottom Right Died");
-            StartCoroutine(DestroyAndRecreate(BottomRight, GameEvent.BottomRightDeath));
+            StartCoroutine(DestroyAndRecreate(BottomRight));
         });
     }
 
-    private IEnumerator DestroyAndRecreate(Screen destroyScreen, GameEvent gameEvent)
+    private IEnumerator DestroyAndRecreate(Screen destroyScreen)
     {
         destroyScreen.DestroyGame();
         yield return new WaitForSeconds(ScreenRespawnTime);
-        var newScreen = Instantiate(GameScreenPrefabs[0]);
-        newScreen.transform.parent = destroyScreen.transform;
+        CreateNewScreen(destroyScreen.transform);
+    }
+
+    private void CreateNewScreen(Transform parentTransform)
+    {
+        var randomGame = GameScreenPrefabs[Random.Range(0, GameScreenPrefabs.Count)];
+        var newScreen = Instantiate(randomGame);
+        newScreen.transform.parent = parentTransform;
         newScreen.transform.localPosition = Vector3.zero;
     }
 }

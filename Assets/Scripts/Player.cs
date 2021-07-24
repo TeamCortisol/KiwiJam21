@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float JumpForce = 100f;
+    [SerializeField] bool CanJumpInAir = true;
 
     private Rigidbody2D _rigidbody;
+    private Collider2D _collider;
     private int _numberOfTimesGotHit = 0;    
     private Screen _screenGameplayMod;
     private GameEvent _onDeathEvent;
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     {
         _screenGameplayMod = GetComponentInParent<Screen>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
         _onDeathEvent = _screenGameplayMod.PlayerDeathEvent;
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = _screenGameplayMod.PlayerColor;
@@ -28,7 +31,7 @@ public class Player : MonoBehaviour
             Start();
         }
 
-        if (Input.GetKeyDown(_screenGameplayMod.ActionKey))
+        if (Input.GetKeyDown(_screenGameplayMod.ActionKey) && CanJump())
         {
             _rigidbody.AddForce(JumpForce * Vector2.up, ForceMode2D.Impulse);
         }
@@ -36,12 +39,18 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Die();
+        if (collision.TryGetComponent<Enemy>(out _))
+        {
+            Die();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Die();
+        if (collision.collider.TryGetComponent<Enemy>(out _))
+        {
+            Die();
+        }
     }
 
     private void Die()
@@ -53,4 +62,6 @@ public class Player : MonoBehaviour
         }
         //Debug.Log($"You got hit {_numberOfTimesGotHit} times");
     }
+
+    private bool CanJump() => CanJumpInAir || _collider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 }
