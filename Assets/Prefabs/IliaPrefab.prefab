@@ -142,10 +142,10 @@ RectTransform:
   m_Father: {fileID: 1212009796072663374}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 948.5999, y: 459.90002}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8148621621405722775
 CanvasRenderer:
@@ -221,7 +221,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1048.6, y: 559.9}
+  m_SizeDelta: {x: 1100, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3480623244925818685
 MonoBehaviour:
@@ -270,7 +270,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 50, y: 50}
-  m_SizeDelta: {x: 948.6, y: 459.90002}
+  m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &8575457623889172038
 GameObject:
@@ -352,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serialController: {fileID: 8575457624224816763}
   txt: {fileID: 8575457624669129482}
+  windowGraph: {fileID: 3480623244925818685}
 --- !u!1 &8575457624353171109
 GameObject:
   m_ObjectHideFlags: 0

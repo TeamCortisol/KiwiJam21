@@ -9,16 +9,27 @@ public class Window_Graph : MonoBehaviour {
 
     [SerializeField] private Sprite circleSprite;
     private RectTransform graphContianer;
+    private List<GameObject> prevGOs;
 
     private void Awake() {
         graphContianer = transform.Find("graphContianer").GetComponent<RectTransform>();
 
-        List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
-        List<GameObject> circles = ShowGraph(valueList);
-        for (int i = 0; i < circles.Count; i++) {
-            GameObject circle = circles[i];
-            Destroy(circle);
+        // List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
+        // List<GameObject> circles = ShowGraph(valueList);
+        // for (int i = 0; i < circles.Count; i++) {
+        //     GameObject circle = circles[i];
+        //     Destroy(circle);
+        // }
+    }
+
+    public void renderBpms(List<int> buffer) {
+        if (prevGOs != null) {
+            for (int i = 0; i < prevGOs.Count; i++) {
+                GameObject prevGO = prevGOs[i];
+                Destroy(prevGO);
+            }
         }
+        prevGOs = ShowGraph(buffer);
     }
 
     private GameObject CreateCircle(Vector2 anchoredPosition) {
@@ -35,8 +46,9 @@ public class Window_Graph : MonoBehaviour {
 
     private List<GameObject> ShowGraph(List<int> valueList) {
         float graphHeight = graphContianer.sizeDelta.y;
-        float yMaximum = 100f;
-        float xSize = 50f;
+        // float yMaximum = 100f;
+        float yMaximum = 600f;
+        float xSize = 50f/10f;
 
         GameObject lastCircleGameObject = null;
 
