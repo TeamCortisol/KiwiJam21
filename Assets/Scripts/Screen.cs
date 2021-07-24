@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreenGameplaySettings : MonoBehaviour
+public class Screen : MonoBehaviour
 {
     [SerializeField] public KeyCode ActionKey = KeyCode.Q;
     [SerializeField] public Color PlayerColor;
+    [SerializeField] public GameEvent PlayerDeathEvent;
 
-    public float CurrentSpeed { get; private set; }
+    public float CurrentDifficulty { get; private set; }
 
     private GlobalState _globalState;
 
@@ -20,6 +21,15 @@ public class ScreenGameplaySettings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CurrentSpeed = _globalState.Difficulty * 10;
+        CurrentDifficulty = _globalState.Difficulty;
+    }
+
+    public void DestroyGame()
+    {
+        var game = GetComponentInChildren<SubGame>();
+        if (game != null)
+        {
+            Destroy(game.gameObject);
+        }
     }
 }
