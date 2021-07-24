@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096307, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: m_GravityScale
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096308, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: m_RootOrder
@@ -622,7 +622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096311, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: JumpForce
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096311, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: CanJumpInAir

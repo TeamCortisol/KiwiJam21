@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 4360205163821334357}
   - component: {fileID: 4360205163821334358}
   m_Layer: 0
-  m_Name: MeteorSpawner (1)
+  m_Name: MeteorSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

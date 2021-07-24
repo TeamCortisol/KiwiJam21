@@ -32,7 +32,8 @@ public class MeteorSpawner : MonoBehaviour
             var horizontalSpawnDistance = Random.Range(-RandomPos, RandomPos);
             
             var prefabIdx = Random.Range(0, Meteors.Length);
-            Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
+            var meteor = Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
+            meteor.transform.parent = transform;
         }
     }
 }
