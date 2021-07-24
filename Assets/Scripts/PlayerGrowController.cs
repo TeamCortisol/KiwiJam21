@@ -11,7 +11,7 @@ public class PlayerGrowController : MonoBehaviour
 
     private Vector3 originalScale;
     private int _numberOfTimesGotHit = 0;
-    private ScreenGameplaySettings _screenGameplayMod;
+    private Screen _screenGameplayMod;
     public float scaleMultiplier = 0.3f;
     
     private void Start()
@@ -20,7 +20,7 @@ public class PlayerGrowController : MonoBehaviour
 
         originalScale = transform.localScale;
 
-        _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
+        _screenGameplayMod = GetComponentInParent<Screen>();
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = _screenGameplayMod.PlayerColor;
     }
