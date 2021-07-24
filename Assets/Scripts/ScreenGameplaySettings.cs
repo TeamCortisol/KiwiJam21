@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScreenGameplaySettings : MonoBehaviour
 {
-    [Range(0, 1)]
     [SerializeField] public KeyCode ActionKey = KeyCode.Q;
     [SerializeField] public Color PlayerColor;
 
