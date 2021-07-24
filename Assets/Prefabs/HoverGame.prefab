@@ -308,7 +308,8 @@ MonoBehaviour:
   MinimumSpawnDelay: 0.4
   SpawnDelay: 8
   RandomPos: 5
-  Meteor: {fileID: 7119047300135339055, guid: 18fb5852925d653468cb73088cae9d27, type: 3}
+  Meteors:
+  - {fileID: 7119047300135339055, guid: 18fb5852925d653468cb73088cae9d27, type: 3}
 --- !u!1 &4360205163825752022
 GameObject:
   m_ObjectHideFlags: 0

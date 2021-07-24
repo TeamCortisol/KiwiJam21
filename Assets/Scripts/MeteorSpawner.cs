@@ -7,7 +7,7 @@ public class MeteorSpawner : MonoBehaviour
     [SerializeField] float MinimumSpawnDelay = 0.1f;
     [SerializeField] float SpawnDelay = 3f;
     [SerializeField] float RandomPos = 5f;
-    [SerializeField] GameObject Meteor;
+    [SerializeField] GameObject[] Meteors;
 
     private Screen _screenGameplayMod;
 
@@ -30,7 +30,9 @@ public class MeteorSpawner : MonoBehaviour
             var nextSpawnTime = Mathf.Max(MinimumSpawnDelay, delay * (1 - _screenGameplayMod.CurrentDifficulty));
             yield return new WaitForSeconds(nextSpawnTime);
             var verticalSpawnDistance = Random.Range(-RandomPos, RandomPos);
-            Instantiate(Meteor, new Vector3(transform.position.x , transform.position.y + verticalSpawnDistance), Quaternion.identity);
+            
+            var prefabIdx = Random.Range(0, Meteors.Length);
+            Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x , transform.position.y + verticalSpawnDistance), Quaternion.identity);
         }
     }
 }
