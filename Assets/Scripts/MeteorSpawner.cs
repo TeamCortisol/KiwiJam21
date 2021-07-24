@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
+    [SerializeField] float MinimumSpawnDelay = 0.1f;
     [SerializeField] float SpawnDelay = 3f;
     [SerializeField] float RandomPos = 5f;
     [SerializeField] GameObject[] Meteors;
 
-    private ScreenGameplaySettings _screenGameplayMod;
+    private Screen _screenGameplayMod;
 
     // Start is called before the first frame update
     void Start()
     {
-        _screenGameplayMod = GetComponentInParent<ScreenGameplaySettings>();
+        _screenGameplayMod = GetComponentInParent<Screen>();
         StartCoroutine(SpawnMeteor(SpawnDelay));
     }
 
@@ -26,12 +27,13 @@ public class MeteorSpawner : MonoBehaviour
     {
         while (true)
         {
-            var nextSpawnTime = delay - Mathf.Min(delay - 0.1f, _screenGameplayMod.CurrentSpeed);
+            var nextSpawnTime = Mathf.Max(MinimumSpawnDelay, delay * (1 - _screenGameplayMod.CurrentDifficulty));
             yield return new WaitForSeconds(nextSpawnTime);
-            var verticalSpawnDistance = Random.Range(-RandomPos, RandomPos);
+            var horizontalSpawnDistance = Random.Range(-RandomPos, RandomPos);
             
             var prefabIdx = Random.Range(0, Meteors.Length);
-            Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x , transform.position.y + verticalSpawnDistance), Quaternion.identity);
+            var meteor = Instantiate(Meteors[prefabIdx], new Vector3(transform.position.x + horizontalSpawnDistance, transform.position.y), Quaternion.identity);
+            meteor.transform.parent = transform;
         }
     }
 }

@@ -4,10 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+
+
 public class MyMessageListener : MonoBehaviour {
     public SerialController serialController;
     public TextMeshProUGUI txt;
+
+    public Window_Graph windowGraph;
+
+    public int beatsLogSize = 500;
     private GlobalState globalState;
+
+    private List<int> buffer = new List<int>();
+
+    private float threshold = 620.0F;  //Threshold at which BPM calculation occurs
+    private bool belowThreshold = true;
+    private long beat_old = 0;
+    private List<float> beats = new List<float>();
+    private int beatIndex = 0;
+    private int BPM = 0;
+
+
+
+
 
     // Use this for initialization
     void Start () {
@@ -24,14 +44,62 @@ public class MyMessageListener : MonoBehaviour {
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {
-        // Debug.Log("Arrived: " + msg);
-        // Debug.Log("Arrived: " + "asd");
-        int bpm = Int32.Parse(msg);
-        txt.text = bpm + " BPM";
-        // Target Heart Rate (HR) Zone (60-85%): 117 – 166
-        float diff = ((float) bpm - 117.0F) / (166.0F - 117.0F);
-        float diffClamped = Mathf.Clamp(diff, 0.0F, 1.0F);
-        globalState.Difficulty = diffClamped;
+        if (msg == "!" || msg == "!\r") {
+
+        }
+        else {
+            
+            int voltage = Int32.Parse(msg);
+            txt.text = BPM + " BPM";
+            // Target Heart Rate (HR) Zone (60-85%): 117 – 166
+            float diff = ((float) voltage - 117.0F) / (166.0F - 117.0F);
+            float diffClamped = Mathf.Clamp(diff, 0.0F, 1.0F);
+            // TODO: set difficulty based on diff
+            // globalState.Difficulty = diffClamped;
+
+            buffer.Add(voltage);
+            if (buffer.Count > 66) {
+                buffer.RemoveAt(0);
+            }
+
+
+            // BPM calculation check
+            if (voltage > threshold && belowThreshold == true)
+            {
+                calculateBPM();
+                belowThreshold = false;
+            }
+            else if(voltage < threshold)
+            {
+                belowThreshold = true;
+            }
+
+
+            windowGraph.renderBpms(buffer);
+        }
+
+    }
+
+    void calculateBPM () 
+    {  
+        long milliseconds = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+
+        long beat_new = milliseconds;    // get the current millisecond
+        long diff = beat_new - beat_old;    // find the time between the last two beats
+        
+        float currentBPM = 60000 / diff;    // convert to beats per minute
+        // beats[beatIndex] = currentBPM;  // store to array to convert the average
+        beats.Add(currentBPM);
+        if (beats.Count > beatsLogSize) {
+            beats.RemoveAt(0);
+        }
+        float total = 0.0F;
+        for (int i = 0; i < beats.Count; i++){
+            total += beats[i];
+        }
+        BPM = (int)(total / beats.Count);
+        beat_old = beat_new;
+        // beatIndex = (beatIndex + 1) % beatsLogSize;  // cycle through the array instead of using FIFO queue
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'

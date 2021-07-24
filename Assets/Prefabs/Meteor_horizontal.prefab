@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7119047300135339024}
   - component: {fileID: 7119047300135339025}
   - component: {fileID: 7119047300135339054}
+  - component: {fileID: -5252386250164377204}
   m_Layer: 0
   m_Name: Meteor_horizontal
   m_TagString: Untagged
@@ -136,3 +137,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftForce: 6
   DownForce: 0
+--- !u!114 &-5252386250164377204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119047300135339055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627c40e2d3c82804b9b2efdf421f4514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
