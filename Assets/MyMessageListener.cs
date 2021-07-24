@@ -35,6 +35,7 @@ public class MyMessageListener : MonoBehaviour {
         // Target Heart Rate (HR) Zone (60-85%): 117 – 166
         float diff = ((float) bpm - 117.0F) / (166.0F - 117.0F);
         float diffClamped = Mathf.Clamp(diff, 0.0F, 1.0F);
+        // TODO: set difficulty based on diff
         // globalState.Difficulty = diffClamped;
 
         buffer.Add(bpm);
