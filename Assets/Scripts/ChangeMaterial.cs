@@ -30,9 +30,11 @@ public class ChangeMaterial : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.L) && playerTouchedTile)
+        // if (Input.GetKeyUp(KeyCode.L) && playerTouchedTile)
+        if (Input.GetKeyUp(KeyCode.L))
         {
             SwitchColour();
+            Debug.Log("colour switch");
         }
         else
         {
@@ -40,7 +42,7 @@ public class ChangeMaterial : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
@@ -48,7 +50,7 @@ public class ChangeMaterial : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider collider)
+    private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {

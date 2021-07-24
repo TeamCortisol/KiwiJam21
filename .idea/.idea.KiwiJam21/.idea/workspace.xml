@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c18a42a9-a102-4ff3-a70d-0ae888811524" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/BlackTile.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/BlackTile.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/WhiteTile.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/WhiteTile.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiwiJam21/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/WhiteTile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/WhiteTile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InvertedTiles.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +31,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PatsScripts/MeteorSpawn2.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PatsScripts/OldPlayerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PatsScripts/OtherGame.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerTileInvertScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TileMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TileSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChangeMaterial.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vjq4fBHVEcBKAagHqTqz1mensW" />
@@ -103,7 +92,8 @@
       <updated>1627085661152</updated>
       <workItem from="1627085675854" duration="8878000" />
       <workItem from="1627112461863" duration="40000" />
-      <workItem from="1627113334965" duration="8895000" />
+      <workItem from="1627113334965" duration="9281000" />
+      <workItem from="1627163317395" duration="1597000" />
     </task>
     <servers />
   </component>
