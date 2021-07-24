@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - WhiteTile
+  - BlackTile
+  - TileType1
+  - TileType2
   layers:
   - Default
   - TransparentFX
