@@ -26,8 +26,12 @@ public class MyMessageListener : MonoBehaviour {
     {
         // Debug.Log("Arrived: " + msg);
         // Debug.Log("Arrived: " + "asd");
-        txt.text = Int32.Parse(msg) + " BPM";
-        globalState.Difficulty = Int32.Parse(msg) / 100.0F;
+        int bpm = Int32.Parse(msg);
+        txt.text = bpm + " BPM";
+        // Target Heart Rate (HR) Zone (60-85%): 117 – 166
+        float diff = ((float) bpm - 117.0F) / (166.0F - 117.0F);
+        float diffClamped = Mathf.Clamp(diff, 0.0F, 1.0F);
+        globalState.Difficulty = diffClamped;
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
