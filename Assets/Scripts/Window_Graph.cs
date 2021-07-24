@@ -48,7 +48,7 @@ public class Window_Graph : MonoBehaviour {
         float graphHeight = graphContianer.sizeDelta.y;
         // float yMaximum = 100f;
         float yMaximum = 800f;
-        float xSize = 50f/10f;
+        float xSize = 50f/10f*3f;
 
         GameObject lastCircleGameObject = null;
 

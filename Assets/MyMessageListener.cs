@@ -49,27 +49,27 @@ public class MyMessageListener : MonoBehaviour {
         }
         else {
             
-            int bpm = Int32.Parse(msg);
+            int voltage = Int32.Parse(msg);
             txt.text = BPM + " BPM";
             // Target Heart Rate (HR) Zone (60-85%): 117 – 166
-            float diff = ((float) bpm - 117.0F) / (166.0F - 117.0F);
+            float diff = ((float) voltage - 117.0F) / (166.0F - 117.0F);
             float diffClamped = Mathf.Clamp(diff, 0.0F, 1.0F);
             // TODO: set difficulty based on diff
             // globalState.Difficulty = diffClamped;
 
-            buffer.Add(bpm);
-            if (buffer.Count > 200) {
+            buffer.Add(voltage);
+            if (buffer.Count > 66) {
                 buffer.RemoveAt(0);
             }
 
 
             // BPM calculation check
-            if (bpm > threshold && belowThreshold == true)
+            if (voltage > threshold && belowThreshold == true)
             {
                 calculateBPM();
                 belowThreshold = false;
             }
-            else if(bpm < threshold)
+            else if(voltage < threshold)
             {
                 belowThreshold = true;
             }
