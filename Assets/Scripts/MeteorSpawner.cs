@@ -23,7 +23,8 @@ public class MeteorSpawner : MonoBehaviour
     {
         while (true)
         {
-            var nextSpawnTime = Mathf.Max(MinimumSpawnDelay, delay * (1 - _screenGameplayMod.CurrentDifficulty));
+            // next spawn time ranges from 1.1 * delay to 0.1 * delay
+            var nextSpawnTime = delay * (1.1f - _screenGameplayMod.CurrentDifficulty);
             yield return new WaitForSeconds(nextSpawnTime);
             
             var prefabIdx = Random.Range(0, Meteors.Length);

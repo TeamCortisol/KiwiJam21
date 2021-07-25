@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4360205163821334357}
-  - component: {fileID: 4360205163821334358}
+  - component: {fileID: 7136670638826590449}
   m_Layer: 0
   m_Name: CactusSpawner
   m_TagString: Untagged
@@ -293,7 +293,7 @@ Transform:
   m_Father: {fileID: 4360205164657594038}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4360205163821334358
+--- !u!114 &7136670638826590449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,12 +302,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4360205163821334359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83dd4908440d85145973cef02f49ea59, type: 3}
+  m_Script: {fileID: 11500000, guid: c1e6964ce8543f649ad21d7dc4763b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinimumSpawnDelay: 0.1
-  AverageInitialSpawnDelay: 10
-  RandomPos: 0
+  InitialSpawnDelay: 5
+  InitialSpawnDelayRandomness: 2
   Meteors:
   - {fileID: 7119047300135339055, guid: e13d3c94261bf5f4bbe3e03a3171f210, type: 3}
 --- !u!1 &4360205164657594039
@@ -358,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018a8bac1cded5f40ad2a48496f54826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SurvivedTime: 0
 --- !u!1 &6119914082441606688
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05156496}
+  m_Offset: {x: 0, y: -0.08580202}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -487,7 +487,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.7803739}
+  m_Size: {x: 0.1, y: 0.71189976}
   m_EdgeRadius: 0
 --- !u!1001 &8879873627025461379
 PrefabInstance:
@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096307, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: m_GravityScale
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096308, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: m_RootOrder
@@ -622,7 +622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096311, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: JumpForce
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096311, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: CanJumpInAir

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7119047300135339026}
   - component: {fileID: 7119047300135339027}
   - component: {fileID: 7119047300135339024}
-  - component: {fileID: 7119047300135339054}
   - component: {fileID: 265360870635281659}
   - component: {fileID: -8947783004142731319}
+  - component: {fileID: -2673449733858422273}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Untagged
@@ -107,20 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7119047300135339054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7119047300135339055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25309f65096982b41b552290baa33f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftForce: 3
-  DownForce: 0
 --- !u!61 &265360870635281659
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03183561, y: -0.008070856}
+  m_Offset: {x: -0.01032909, y: -0.008070856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5564551, y: 0.95458204}
+  m_Size: {x: 0.30346662, y: 0.95458204}
   m_EdgeRadius: 0
 --- !u!114 &-8947783004142731319
 MonoBehaviour:
@@ -159,3 +145,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627c40e2d3c82804b9b2efdf421f4514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2673449733858422273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119047300135339055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b95e7835635f43b1aa50fab6e7efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftForce: 3.5

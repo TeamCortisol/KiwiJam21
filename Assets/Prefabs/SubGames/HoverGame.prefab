@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinimumSpawnDelay: 0.4
   AverageInitialSpawnDelay: 10
-  RandomPos: 4
+  RandomPos: 5
   Meteors:
   - {fileID: 7119047300135339055, guid: 18fb5852925d653468cb73088cae9d27, type: 3}
 --- !u!1 &4360205163825752022
@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018a8bac1cded5f40ad2a48496f54826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SurvivedTime: 0
 --- !u!1 &9041820388705598723
 GameObject:
   m_ObjectHideFlags: 0
