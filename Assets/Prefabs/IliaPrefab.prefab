@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 3657079580876709512}
   - component: {fileID: 4549499762353754560}
   m_Layer: 0
-  m_Name: LaserAudio
+  m_Name: ZapAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5c8571513da554133a33c860b3d23c31, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c75f3bcdc7e947d3a78434fc389a9c2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
