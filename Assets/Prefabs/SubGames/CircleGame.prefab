@@ -454,11 +454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645b9fa9e5fa6f04c9cb944d82053c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growSpeed: 0.8
+  InitialGrowSpeed: 0.2
   maxGrowScale: 6
   playerNumberText: {fileID: 3553879045111534415}
   scaleMultiplier: 0.3
-  ringColor: {r: 1, g: 0, b: 0, a: 1}
+  ringColor: {r: 0.6156863, g: 0.85882354, b: 0.6039216, a: 0.5176471}
+  PlayerSuccessColor: {r: 0.6156863, g: 0.85882354, b: 0.6039216, a: 1}
   ringSprites:
   - {fileID: 2126485995916535359}
   - {fileID: 8502972709074359723}
@@ -685,8 +686,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360205162827302485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.5, z: 0}
-  m_LocalScale: {x: 18, y: 1, z: 1}
+  m_LocalPosition: {x: -0.05, y: 4.25, z: 0}
+  m_LocalScale: {x: 17.8, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}
   m_RootOrder: 0
@@ -816,8 +817,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360205163136561161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.5, z: 0}
-  m_LocalScale: {x: 18, y: 1, z: 1}
+  m_LocalPosition: {x: -0.05, y: -5.25, z: 0}
+  m_LocalScale: {x: 17.8, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}
   m_RootOrder: 1
