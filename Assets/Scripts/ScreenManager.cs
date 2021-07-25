@@ -45,7 +45,8 @@ public class ScreenManager : MonoBehaviour
     {
         screen.DestroyGame();
         yield return new WaitForSeconds(ScreenRespawnTime);
-        screen.CreateGame(GetRandomGame());
+        if (!GameManager.Instance.IsGameComplete)
+            screen.CreateGame(GetRandomGame());
     }
 
     private SubGame GetRandomGame() => GameScreenPrefabs[Random.Range(0, GameScreenPrefabs.Count)];
