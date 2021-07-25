@@ -14,7 +14,13 @@ public class PlayerGrowController : MonoBehaviour
     private Screen _screen;
     public float scaleMultiplier = 0.3f;
 
+    [Space]
+    public Color ringColor = Color.red;
+    public SpriteRenderer[] ringSprites;
+
     private bool isGrowing = true;
+
+    private int currentNumber;
     
     private void Start()
     {
@@ -25,6 +31,18 @@ public class PlayerGrowController : MonoBehaviour
         _screen = GetComponentInParent<Screen>();
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = _screen.PlayerColor;
+
+        SetRingColor();
+    }
+
+    private void SetRingColor()
+    {
+        foreach (var ring in ringSprites)
+            ring.color = Color.white;
+
+        currentNumber = NumberSpawner.Instance.GenerateNewNumber();
+        ringSprites[currentNumber - 1].color = ringColor;
+
     }
 
     void Update()
@@ -51,7 +69,9 @@ public class PlayerGrowController : MonoBehaviour
             {
                 // reset
                 isGrowing = true;
-                // TODO: destroy screen ?
+                // destroy screen
+                EventManager.Emit(_screen.PlayerDeathEvent);
+                return;
             }
         }
 
@@ -59,7 +79,7 @@ public class PlayerGrowController : MonoBehaviour
         if (Input.GetKeyDown(_screen.ActionKey))
         {
             Debug.Log("currentScale " + currentScale);
-            if (NumberSpawner.Instance.CurrentNumber == currentScale)
+            if (currentNumber == currentScale)
             {
                 Debug.Log("Ring HIT!");
 
@@ -68,10 +88,11 @@ public class PlayerGrowController : MonoBehaviour
                 playerNumberText.text = "";
 
                 // generate new number
-                NumberSpawner.Instance.GenerateNewNumber();
+                SetRingColor();
+                //currentNumber = NumberSpawner.Instance.GenerateNewNumber();
             }
             else { 
-                // TODO: handle wrong press
+                // handle wrong press
                 EventManager.Emit(_screen.PlayerDeathEvent);
             }
         }
