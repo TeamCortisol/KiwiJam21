@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float JumpForce = 100f;
     [SerializeField] bool CanJumpInAir = true;
+    [SerializeField] GameObject vfxDeath;
+
 
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
@@ -60,6 +62,13 @@ public class Player : MonoBehaviour
         if (_numberOfTimesGotHit == 0)
         {
             _numberOfTimesGotHit++;
+
+            if (vfxDeath != null)
+            {
+                var vfx = Instantiate(vfxDeath, transform.position, Quaternion.identity);
+                Destroy(vfx, 3f);
+            }
+
             EventManager.Emit(_onDeathEvent);
         }
         //Debug.Log($"You got hit {_numberOfTimesGotHit} times");

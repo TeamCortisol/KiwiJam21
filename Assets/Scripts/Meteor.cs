@@ -7,6 +7,8 @@ public class Meteor : MonoBehaviour
     [SerializeField] float LeftForce = 10f;
     [SerializeField] float DownForce = 10f;
 
+    public GameObject vfxExplode;
+    public GameObject vfxSparkle;
     private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
@@ -23,6 +25,17 @@ public class Meteor : MonoBehaviour
     {
         if (collision.CompareTag("Wall") || collision.CompareTag("Player"))
         {
+            var explosion = Instantiate(vfxExplode, transform.position, Quaternion.identity);
+            Destroy(explosion, 3f);
+
+            if (vfxSparkle != null)
+            {
+                var sparkle = Instantiate(vfxSparkle, transform.position, Quaternion.identity);
+                Destroy(sparkle, 3f);
+            }
+            
+
+
             Destroy(gameObject);
         }
     }

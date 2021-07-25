@@ -621,6 +621,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5836535569884096311, guid: 14610e2531370024c99183009b43f68a, type: 3}
+      propertyPath: vfxDeath
+      value: 
+      objectReference: {fileID: 424330462248913976, guid: 0c5c30f547033284e888cb0dc3844f7c, type: 3}
+    - target: {fileID: 5836535569884096311, guid: 14610e2531370024c99183009b43f68a, type: 3}
       propertyPath: JumpForce
       value: 18
       objectReference: {fileID: 0}
