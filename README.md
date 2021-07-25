@@ -5,6 +5,9 @@ KiwiJam Auckland Game Jam 2021
 # Play
 Play it on Itch.io! https://sylkyu.itch.io/cortisol
 
+# Demo video
+https://drive.google.com/file/d/1GbSwTRh7eXgmUtgR427EIfMWjXSpj2Sl/view
+
 # Credits
 Brought to you with ❤️ by
 - [@tedonk03](https://github.com/tedonk03) 
