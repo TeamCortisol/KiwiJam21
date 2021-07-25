@@ -7,6 +7,8 @@ public class Screen : MonoBehaviour
     [SerializeField] public KeyCode ActionKey = KeyCode.Q;
     [SerializeField] public Color PlayerColor;
     [SerializeField] public GameEvent PlayerDeathEvent;
+    [SerializeField] public GameObject DeathBolt;
+    [SerializeField] public GameObject DeathBoltParticles;
 
     public float CurrentDifficulty;
 
@@ -16,6 +18,7 @@ public class Screen : MonoBehaviour
     void Start()
     {
         _globalState = FindObjectOfType<GlobalState>();
+        DeathBolt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +33,14 @@ public class Screen : MonoBehaviour
         if (game != null)
         {
             Destroy(game.gameObject);
+            
+            DeathBolt.SetActive(true);
+            
+            if (DeathBoltParticles != null)
+            {
+                var vfx = Instantiate(DeathBoltParticles, DeathBolt.transform.position, Quaternion.identity);
+                Destroy(vfx, 3f);
+            }            
         }
     }
 
@@ -38,7 +49,7 @@ public class Screen : MonoBehaviour
         var newGame = Instantiate(subGame);
         newGame.transform.parent = transform;
         newGame.transform.localPosition = Vector3.zero;
-
+        DeathBolt.SetActive(false);
         return newGame.gameObject;
     }
 }
