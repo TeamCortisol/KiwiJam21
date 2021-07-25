@@ -5,63 +5,46 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int moveSpeed;
-    [SerializeField] private Material myMaterial;
-    private bool isWhite;
-    private bool playerTouchedTile;
+    private bool _playerTouchedTile;
+    private Screen _screenGameplayMod;
 
     void Start()
     {
-        isWhite = true;
+        _screenGameplayMod = GetComponentInParent<Screen>();
+        _playerTouchedTile = false;
     }
     
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.left * (moveSpeed * Time.deltaTime));
-        if (Input.GetKeyUp(KeyCode.L) && playerTouchedTile)
-        {
-            SwitchColour();
-            Debug.Log("colour switch");
-        }
-        else
-        {
-            // Debug.Log("died");
-        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Wall"))
-        {
-            Debug.Log("hit wall");
-            Destroy(gameObject);
-        }
         if (collision.CompareTag("Player"))
         {
-            playerTouchedTile = true;
+            _playerTouchedTile = true;
+            SwitchColour();
         }
-    }
-    
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Player"))
+        if (collision.CompareTag("Wall"))
         {
-            playerTouchedTile = false;
-        }
-    }
-    
-    private void SwitchColour()
-    {
-        if (isWhite)
-        {
-            myMaterial.color = Color.black;
-            isWhite = false;
-        }
-        else
-        {
-            myMaterial.color = Color.white;
-            isWhite = true;
+            Destroy(gameObject);
         }
     }
 
+    private void SwitchColour()
+    {
+        if (Input.GetKeyUp(_screenGameplayMod.ActionKey))
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            _playerTouchedTile = false;
+        }
+    }
 }
