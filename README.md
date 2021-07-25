@@ -9,7 +9,7 @@ Play it on Itch.io! https://sylkyu.itch.io/cortisol
 https://drive.google.com/file/d/1GbSwTRh7eXgmUtgR427EIfMWjXSpj2Sl/view
 
 # Credits
-Brought to you with ❤️ by
+Brought to you with ❤️ by Team Cortisol
 - Alice Zhao
 - Edward Ferdian [@tedonk03](https://github.com/tedonk03) 
 - Hayden Moore [@aych-moor](https://github.com/aych-moore)
