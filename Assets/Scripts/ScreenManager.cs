@@ -41,12 +41,22 @@ public class ScreenManager : MonoBehaviour
         });
     }
 
+    private void Update()
+    {
+        //TopLeft.enabled = !GameManager.Instance.IsGameComplete;
+        //TopRight.enabled = !GameManager.Instance.IsGameComplete;
+        //BottomLeft.enabled = !GameManager.Instance.IsGameComplete;
+        //BottomRight.enabled = !GameManager.Instance.IsGameComplete;
+    }
+
     private IEnumerator DestroyAndRecreate(Screen screen)
     {
         screen.DestroyGame();
         yield return new WaitForSeconds(ScreenRespawnTime);
         if (!GameManager.Instance.IsGameComplete)
+        {
             screen.CreateGame(GetRandomGame());
+        }
     }
 
     private SubGame GetRandomGame() => GameScreenPrefabs[Random.Range(0, GameScreenPrefabs.Count)];

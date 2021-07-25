@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DeathCountText : MonoBehaviour
 {
+    [SerializeField] bool WebGlVersion = false;
     private TextMeshProUGUI _textMesh;
     private GlobalState _globalState;
 
@@ -18,6 +19,13 @@ public class DeathCountText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _textMesh.text = $"Deaths: {_globalState.NumberOfDeaths}";
+        if (WebGlVersion)
+        {
+            _textMesh.text = $"Deaths:      {_globalState.NumberOfDeaths}";
+        } 
+        else
+        {
+            _textMesh.text = $"Deaths: {_globalState.NumberOfDeaths}";
+        }
     }
 }

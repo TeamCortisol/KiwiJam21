@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinUI: {fileID: 1836089754}
-  GameLengthTime: 240
+  GameLengthTime: 120
 --- !u!4 &1432951831
 Transform:
   m_ObjectHideFlags: 0
@@ -2263,6 +2263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee561283a9e92ec49abf1a35b03075bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WebGlVersion: 0
 --- !u!1 &2048262607
 GameObject:
   m_ObjectHideFlags: 0
