@@ -16,6 +16,13 @@ public class Tile : MonoBehaviour
     
     void Update()
     {
+        // hack: start isn't called when this object is instantiated so call it manually here
+        if (_screenGameplayMod == null)
+        {
+            Start();
+            // another hack: keep doing this until it is not null
+            return;  // don't even bother to do the rest of Update()
+        }
         transform.Translate(Vector2.left * (moveSpeed * Time.deltaTime));
     }
     
