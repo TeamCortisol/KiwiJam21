@@ -8,7 +8,6 @@ public class Screen : MonoBehaviour
     [SerializeField] public Color PlayerColor;
     [SerializeField] public GameEvent PlayerDeathEvent;
     [SerializeField] public GameObject DeathBolt;
-    [SerializeField] public GameObject DeathBoltParticles;
 
     public float CurrentDifficulty;
 
@@ -33,14 +32,7 @@ public class Screen : MonoBehaviour
         if (game != null)
         {
             Destroy(game.gameObject);
-            
             DeathBolt.SetActive(true);
-            
-            if (DeathBoltParticles != null)
-            {
-                var vfx = Instantiate(DeathBoltParticles, DeathBolt.transform.position, Quaternion.identity);
-                Destroy(vfx, 3f);
-            }            
         }
     }
 
