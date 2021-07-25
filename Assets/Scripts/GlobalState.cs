@@ -7,10 +7,20 @@ public class GlobalState : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] public float Difficulty = 0f;
 
+    public int NumberOfDeaths { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventManager.Subscribe(GameEvent.TopLeftDeath, _ => OnPlayerDeath());
+        EventManager.Subscribe(GameEvent.TopRightDeath, _ => OnPlayerDeath());
+        EventManager.Subscribe(GameEvent.BottomLeftDeath, _ => OnPlayerDeath());
+        EventManager.Subscribe(GameEvent.BottomRightDeath, _ => OnPlayerDeath());
+    }
+
+    private void OnPlayerDeath()
+    {
+        NumberOfDeaths++;
     }
 
     // Update is called once per frame
