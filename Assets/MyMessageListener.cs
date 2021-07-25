@@ -13,6 +13,8 @@ public class MyMessageListener : MonoBehaviour {
 
     public Window_Graph windowGraph;
 
+    public AudioSource audioSource;
+
     public int beatsLogSize = 500;
     private GlobalState globalState;
 
@@ -37,18 +39,22 @@ public class MyMessageListener : MonoBehaviour {
         EventManager.Subscribe(GameEvent.TopLeftDeath, _ => 
         {
             Zap();
+            audioSource.Play();
         });
         EventManager.Subscribe(GameEvent.TopRightDeath, _ => 
         {
             Zap();
+            audioSource.Play();
         });
         EventManager.Subscribe(GameEvent.BottomLeftDeath, _ => 
         {
             Zap();
+            audioSource.Play();
         });
         EventManager.Subscribe(GameEvent.BottomRightDeath, _ => 
         {
             Zap();
+            audioSource.Play();
         });
     }
     // Update is called once per frame
