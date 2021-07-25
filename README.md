@@ -3,7 +3,7 @@ KiwiJam Auckland Game Jam 2021
 ![Start_Screen_Transparent (1)](https://user-images.githubusercontent.com/2031472/126887214-0ab24d6f-e815-45bc-ac99-751e889b416a.png)
 
 # Play
-Play it on Itch.io! https://sylkyu.itch.io/cortisol
+Play it on Itch.io! https://sylkyu.itch.io/qapl
 
 # Demo video
 https://drive.google.com/file/d/1GbSwTRh7eXgmUtgR427EIfMWjXSpj2Sl/view
