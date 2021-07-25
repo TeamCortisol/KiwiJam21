@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftForce: 6
   DownForce: 0
+  vfxExplode: {fileID: 424330462248913976, guid: 0c5c30f547033284e888cb0dc3844f7c, type: 3}
 --- !u!114 &-5252386250164377204
 MonoBehaviour:
   m_ObjectHideFlags: 0

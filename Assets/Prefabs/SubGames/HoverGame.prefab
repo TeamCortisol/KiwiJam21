@@ -456,6 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpForce: 4
   CanJumpInAir: 1
+  vfxDeath: {fileID: 424330462248913976, guid: 0c5c30f547033284e888cb0dc3844f7c, type: 3}
 --- !u!61 &4360205163825752017
 BoxCollider2D:
   m_ObjectHideFlags: 0
