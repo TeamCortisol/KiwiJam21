@@ -65,9 +65,5 @@ public class Player : MonoBehaviour
         //Debug.Log($"You got hit {_numberOfTimesGotHit} times");
     }
 
-    private bool CanJump() {
-        Debug.Log("CanJumpInAir" + CanJumpInAir);
-        Debug.Log("_collider.IsTouchingLayers(LayerMask.GetMask(Ground)" + _collider.IsTouchingLayers(LayerMask.GetMask("Ground")));
-        return CanJumpInAir || _collider.IsTouchingLayers(LayerMask.GetMask("Ground"));
-    }
+    private bool CanJump() => CanJumpInAir || _collider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 }
