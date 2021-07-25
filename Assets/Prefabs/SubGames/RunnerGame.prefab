@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e6964ce8543f649ad21d7dc4763b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialSpawnDelay: 5
+  InitialSpawnDelay: 8
   InitialSpawnDelayRandomness: 2
   Meteors:
   - {fileID: 7119047300135339055, guid: e13d3c94261bf5f4bbe3e03a3171f210, type: 3}
