@@ -11,8 +11,16 @@ public class PlayerGrowController : MonoBehaviour
 
     private Vector3 originalScale;
     private int _numberOfTimesGotHit = 0;
-    private Screen _screenGameplayMod;
+    private Screen _screen;
     public float scaleMultiplier = 0.3f;
+
+    [Space]
+    public Color ringColor = Color.red;
+    public SpriteRenderer[] ringSprites;
+
+    private bool isGrowing = true;
+
+    private int currentNumber;
     
     private void Start()
     {
@@ -20,15 +28,30 @@ public class PlayerGrowController : MonoBehaviour
 
         originalScale = transform.localScale;
 
-        _screenGameplayMod = GetComponentInParent<Screen>();
+        _screen = GetComponentInParent<Screen>();
         var spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = _screenGameplayMod.PlayerColor;
+        spriteRenderer.color = _screen.PlayerColor;
+
+        SetRingColor();
+    }
+
+    private void SetRingColor()
+    {
+        foreach (var ring in ringSprites)
+            ring.color = Color.white;
+
+        currentNumber = NumberSpawner.Instance.GenerateNewNumber();
+        ringSprites[currentNumber - 1].color = ringColor;
+
     }
 
     void Update()
     {
         // grow
-        transform.localScale *= 1 + growSpeed * Time.deltaTime;
+        if (isGrowing)
+            transform.localScale *= 1 + growSpeed * Time.deltaTime;
+        else
+            transform.localScale *= 1 - growSpeed * Time.deltaTime;
 
         // update number
         var currentScale = Mathf.RoundToInt(transform.localScale.x / scaleMultiplier);
@@ -36,14 +59,27 @@ public class PlayerGrowController : MonoBehaviour
 
         if (currentScale > maxGrowScale)
         {
-            transform.localScale = originalScale;
+            //shrink
+            isGrowing = false;
+            
+        }
+        else if (currentScale == 0)
+        {
+            if (!isGrowing)
+            {
+                // reset
+                isGrowing = true;
+                // destroy screen
+                EventManager.Emit(_screen.PlayerDeathEvent);
+                return;
+            }
         }
 
         // handle input
-        if (Input.GetKeyDown(_screenGameplayMod.ActionKey))
+        if (Input.GetKeyDown(_screen.ActionKey))
         {
             Debug.Log("currentScale " + currentScale);
-            if (NumberSpawner.Instance.CurrentNumber == currentScale)
+            if (currentNumber == currentScale)
             {
                 Debug.Log("Ring HIT!");
 
@@ -52,11 +88,12 @@ public class PlayerGrowController : MonoBehaviour
                 playerNumberText.text = "";
 
                 // generate new number
-                NumberSpawner.Instance.GenerateNewNumber();
+                SetRingColor();
+                //currentNumber = NumberSpawner.Instance.GenerateNewNumber();
             }
             else { 
-                // TODO: handle wrong press
-                
+                // handle wrong press
+                EventManager.Emit(_screen.PlayerDeathEvent);
             }
         }
     }
@@ -74,6 +111,4 @@ public class PlayerGrowController : MonoBehaviour
         _numberOfTimesGotHit++;
         Debug.Log($"You got hit {_numberOfTimesGotHit} times");
     }
-
-
 }

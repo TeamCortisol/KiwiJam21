@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimumSpawnDelay: 0.1
-  SpawnDelay: 5
+  AverageInitialSpawnDelay: 10
   RandomPos: 0
   Meteors:
   - {fileID: 7119047300135339055, guid: e13d3c94261bf5f4bbe3e03a3171f210, type: 3}
@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6119914082441606688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.87, y: 0, z: 0}
+  m_LocalPosition: {x: -8.62, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 4360205164657594038}

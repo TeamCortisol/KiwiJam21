@@ -13,6 +13,8 @@ public class MyMessageListener : MonoBehaviour {
 
     public Window_Graph windowGraph;
 
+    public AudioSource audioSource;
+
     public int beatsLogSize = 500;
     private GlobalState globalState;
 
@@ -33,13 +35,30 @@ public class MyMessageListener : MonoBehaviour {
     void Start () {
             serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
             globalState = FindObjectOfType<GlobalState>();
+
+        EventManager.Subscribe(GameEvent.TopLeftDeath, _ => 
+        {
+            Zap();
+            audioSource.Play();
+        });
+        EventManager.Subscribe(GameEvent.TopRightDeath, _ => 
+        {
+            Zap();
+            audioSource.Play();
+        });
+        EventManager.Subscribe(GameEvent.BottomLeftDeath, _ => 
+        {
+            Zap();
+            audioSource.Play();
+        });
+        EventManager.Subscribe(GameEvent.BottomRightDeath, _ => 
+        {
+            Zap();
+            audioSource.Play();
+        });
     }
     // Update is called once per frame
     void Update () {
-        if (Input.GetAxis("Vertical") > 0.0F) {
-            Debug.Log("Sending zaaap");
-            serialController.SendSerialMessage("zaaap\r");
-        }
     }
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
@@ -109,5 +128,15 @@ public class MyMessageListener : MonoBehaviour {
     void OnConnectionEvent(bool success)
     {
         Debug.Log(success ? "Device connected" : "Device disconnected");
+    }
+
+    void Zap() {
+        serialController.SendSerialMessage("zap\r");
+    }
+    void Zaap() {
+        serialController.SendSerialMessage("zaap\r");
+    }
+    void Zaaap() {
+        serialController.SendSerialMessage("zaaap\r");
     }
 }

@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
         if (_screenGameplayMod == null)
         {
             Start();
+            // another hack: keep doing this until it is not null
+            return;  // don't even bother to do the rest of Update()
         }
 
         if (Input.GetKeyDown(_screenGameplayMod.ActionKey) && CanJump())

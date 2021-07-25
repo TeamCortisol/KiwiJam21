@@ -8,7 +8,7 @@ public class Screen : MonoBehaviour
     [SerializeField] public Color PlayerColor;
     [SerializeField] public GameEvent PlayerDeathEvent;
 
-    public float CurrentDifficulty { get; private set; }
+    public float CurrentDifficulty;
 
     private GlobalState _globalState;
 
@@ -31,5 +31,14 @@ public class Screen : MonoBehaviour
         {
             Destroy(game.gameObject);
         }
+    }
+
+    public GameObject CreateGame(SubGame subGame)
+    {
+        var newGame = Instantiate(subGame);
+        newGame.transform.parent = transform;
+        newGame.transform.localPosition = Vector3.zero;
+
+        return newGame.gameObject;
     }
 }
